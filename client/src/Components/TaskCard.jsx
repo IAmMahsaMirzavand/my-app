@@ -77,7 +77,7 @@ const TaskCard = ({ title, description, date, status, isImportant, taskId, onTog
       </div>
 
      
-      <EditTaskModal show={showEditModal} onClose={handleCloseModal} taskToEdit={{ title, description, date, status, isImportant, id: taskId }} />
+      <EditTaskModal show={showEditModal} onClose={handleCloseModal} taskToEdit={{ title, description, date, status, isImportant, directory, id: taskId }} />
 
 
              <DeleteConfirmationModal
