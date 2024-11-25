@@ -36,9 +36,9 @@
 // const ModalDelete = ({ showModal, onDelete, onClose, entityType, entityId }) => {
 //   const handleDelete = () => {
 //     if (onDelete) {
-//       onDelete(entityId); // حذف با شناسه entityId
+//       onDelete(entityId);
 //     }
-//     onClose(); // بستن modal پس از تایید حذف
+//     onClose(); 
 //   };
 
 //   return (

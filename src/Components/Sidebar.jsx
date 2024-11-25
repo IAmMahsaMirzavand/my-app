@@ -9,6 +9,7 @@ import { addDirectory, deleteDirectory } from '../redux/directoriesSlice';
 import { deleteTasksByDirectory } from '../redux/tasksSlice';
 import { FaBars, FaTasks, FaStar, FaCheckCircle, FaTimesCircle, FaFolderPlus, FaEdit, FaTrash } from 'react-icons/fa';
 import AddDirectoryModal from './AddDirectoryModal';
+import TaskHeader from './TaskHeader';
 
 const Sidebar = () => {
   const tasks = useSelector((state) => state.tasks.tasks); 
@@ -41,7 +42,7 @@ const Sidebar = () => {
   const handleDeleteDirectory = () => {
     if (directoryToDelete) {
       const { id } = directoryToDelete;
-  
+
       
       dispatch(deleteDirectory(id));
   
@@ -111,12 +112,12 @@ const Sidebar = () => {
   <Nav className="flex-column">
                 {directories.map((directory) => {
                  
-                  const taskCount = tasks.filter((task) => task.directory === directory.name).length;
+                  const directoriesCount = tasks.filter((task) => task.directory === directory.name).length;
                   return (
                     <Nav.Item key={directory.id} className="mb-2 directory-item">
                       <Link to={`/directory/${directory.name}`} className="nav-link d-flex justify-content-between align-items-center">
                         {directory.name}
-                        <span>({taskCount})</span> 
+                        <span>({directoriesCount})</span> 
                         {directory.name !== 'Main' && (
                           <FaTrash
                             className="text-danger"
@@ -160,6 +161,7 @@ const Sidebar = () => {
           directoryName={directoryToDelete.name}
         />
       )}
+      
     </>
   );
 };

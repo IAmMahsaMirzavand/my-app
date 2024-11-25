@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form, InputGroup, Dropdown, DropdownButton, Row, Col } from 'react-bootstrap';
 import { FaSearch, FaBars, FaThLarge } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-function TaskHeader({ taskCount, routeName, setIsModalOpen, sortOptions, onSortChange,onSearchChange  }) {
+
+function TaskHeader({ taskCount, routeName, setIsModalOpen, sortOptions, onSortChange,onSearchChange }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOptionInternal, setSortOptionInternal] = useState('Sort by');
-  const [sortOption, setSortOption] = useState('Sort by'); 
+  const [sortOption, setSortOption] = useState('Sort by');
+
+
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -78,6 +83,8 @@ function TaskHeader({ taskCount, routeName, setIsModalOpen, sortOptions, onSortC
         <Col xs={12} md={6}>
           <h5 className="mb-0">
             {routeName} Tasks ({taskCount}) 
+          
+      
           </h5>
         </Col>
         <Col xs={12} md={3} className="text-end d-flex justify-content-end align-items-center">
@@ -106,14 +113,6 @@ function TaskHeader({ taskCount, routeName, setIsModalOpen, sortOptions, onSortC
 }
 
 export default TaskHeader;
-
-
-
-
-
- 
-
-
 
 
 

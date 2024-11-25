@@ -10,7 +10,7 @@ const EditTaskModal = ({ show, onClose, taskToEdit }) => {
   const [date, setDate] = useState('');
   const [isImportant, setIsImportant] = useState(false);
 
-  // اگر taskToEdit تغییر کند، فیلدها باید به‌روز شوند
+  
   useEffect(() => {
     if (taskToEdit) {
       setTitle(taskToEdit.title);
@@ -23,8 +23,8 @@ const EditTaskModal = ({ show, onClose, taskToEdit }) => {
 
   const handleSave = () => {
     const updatedTask = { ...taskToEdit, title, description, status, date, isImportant };
-    dispatch(updateTask(updatedTask));  // ارسال تغییرات به redux
-    onClose();  // بستن modal
+    dispatch(updateTask(updatedTask));  
+    onClose(); 
   };
 
   return (

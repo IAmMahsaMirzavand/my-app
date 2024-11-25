@@ -51,7 +51,7 @@ const AddTaskModal = ({ setIsModalOpen }) => {
             <FormControl as="select" {...register('directoryId', { required: 'Please select a directory' })}>
               <option value="">Select...</option>
               {directories.map((dir) => (
-                <option key={dir.id} value={dir.id}>{dir.name}</option>
+                <option key={dir.id} value={dir.name}>{dir.name}</option>
               ))}
             </FormControl>
             {errors.directoryId && <span>{errors.directoryId.message}</span>}

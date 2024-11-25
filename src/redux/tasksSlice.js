@@ -54,6 +54,8 @@ const tasksSlice = createSlice({
   setTaskToEdit: (state, action) => {
     state.taskToEdit = action.payload; 
   },
+
+
 },
 });
 
